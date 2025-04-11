@@ -25,9 +25,6 @@ class GameController(private val gameService: GameService, private val consisten
     @PostMapping("/restart")
     fun restartGame() = gameService.restartGame()
 
-//    @PostMapping("/reset")
-//    fun resetGame() = gameService.handleRemoteReset()
-
     @PostMapping("/reset")
     fun handleRemoteReset(@RequestHeader("X-Reset-Origin", required = false) origin: String?): Boolean {
         if (origin != "opponent") {

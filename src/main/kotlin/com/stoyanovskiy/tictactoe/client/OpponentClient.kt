@@ -19,9 +19,6 @@ interface OpponentClient {
     @PostMapping("/game/role")
     fun negotiateRole(@RequestBody request: RoleRequest): RoleResponse
 
-//    @PostMapping("/game/reset")
-//    fun resetGame(): Boolean
-
     @PostMapping("/game/reset")
     fun resetGame(@RequestHeader("X-Reset-Origin") origin: String = "opponent"): Boolean
 
